@@ -1,0 +1,28 @@
+.main__about {
+  height: 415px;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main__about .main__about--heading {
+  padding-top: 100px;
+}
+.main__about .main__about--text {
+  width: 620px;
+  height: 62px;
+  color: #787878;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+.main__about .main__about--image {
+  padding-top: 37px;
+}

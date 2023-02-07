@@ -1,0 +1,95 @@
+.main__contactUs {
+  width: 100vw;
+  height: 815px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main__contactUs__wrapper {
+    width: 680px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main__contactUs--heading {
+      width: 270px;
+      height: 29px;
+      color: #1d1d1d;    
+      font-size: 30px;    
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .main__contactUs--text {
+      width: 610px;
+      height: 38px;
+      color: #787878;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .main__contactUs--form {
+      padding-top: 38px;
+      width: 725px;
+      height: 410px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: #787878;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.07px;
+      
+      .main__contactUs--input {
+        padding-left: 20px; 
+        margin-bottom: 30px; 
+      }
+
+      .inputNameAndEmail {
+        height: 48px;
+        width: 310px;
+        border: 0;
+      }
+
+      .EmailMargin {
+        margin-left: 30px;
+      }
+
+      .inputTitle {
+        height: 48px;
+        width: 670px;
+        border: 0;
+      }
+
+      .main__contactUs--textArea {
+        width: 672px; 
+        height: 174px;
+        border: 0;
+        padding-top: 18px;
+        padding-left: 20px;
+        margin-bottom: 30px; 
+      }
+
+      .main__contactUs--submit {
+        width: 180px;
+        height: 54px;
+        border: 0;
+        background-color: $primary-color;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 84px;
+        letter-spacing: 1.2px;
+        line-height: normal;
+
+      }
+    }
+  }
+
+  
+
+}
