@@ -243,12 +243,17 @@
         <p class="main__contactUs--text">Let us know what you're looking for in an agency. We'll take a look and see
         if this could be the start of something beautiful.</p>
 
-        <form name="contactUs" action="#" class="main__contactUs--form">
+        <form name="contactUs" action="#" class="main__contactUs--form" id="form">
           <input name="name" form="contactUs" type="text" placeholder="YOUR NAME" class="main__contactUs--input inputNameAndEmail">
-          <input name="email" form="contactUs" type="text" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
+          <input name="email" form="contactUs" type="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
           <input name="title" form="contactUs" type="text" placeholder="YOUR TITLE" class="main__contactUs--input inputTitle">
           <textarea name="comment" cols="170" rows="670" placeholder="YOUR COMMENT" class="main__contactUs--textArea"></textarea>
-          <input name="submit" form="contactUs" value="SEND MESSAGE" type="submit" class="main__contactUs--submit">
+
+          <div class="form__buttonAndMessage">
+            <button name="submit" type="submit" class="main__contactUs--submit">SEND MESSAGE</button>
+            <span class="form__buttonAndMessage--successMesage">Ваше сообщение успешно отправленно</span>
+            <span class="form__buttonAndMessage--faultMesage">Введите коректные данные</span>
+          </div>
         </form>
       </div>      
     </div>    
@@ -292,4 +297,5 @@
 </body>
 
 <script src="./scripts/menuButton.js"></script>
+<script src="./scripts/form.js"></script>
 </html>
