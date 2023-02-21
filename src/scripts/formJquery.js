@@ -49,3 +49,5 @@ $(document).ready(() => {
     $(".form__buttonAndMessage--successMesage").addClass("successMesageVisible");
   });
 });
+
+exports.formJquery = formJquery;

@@ -60,3 +60,5 @@ form.addEventListener("submit", (e) => {
 
   console.log(data);
 });
+
+exports.form = form;
