@@ -1,7 +1,6 @@
 $primary-color:  #10c9c3;
 
 .header {
-  width: 100vw;
   height: 670px;
   background-color: #f5f5f5;
   
@@ -43,11 +42,10 @@ $primary-color:  #10c9c3;
   .header__banner {
     display: flex;
     justify-content: flex-end;
-    width: 100vw;
+    padding-left: 820px;
+    padding-bottom: 100px;
 
     .header__banner__wrapper{
-      margin-bottom: 100px;
-      margin-right: 374px;
 
       .header__bunner--heading{
         font-size: 38px;

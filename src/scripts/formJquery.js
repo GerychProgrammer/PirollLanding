@@ -1,8 +1,47 @@
-$(document).ready(() => {
+import * as $ from "jquery";
+
+export default $(document).ready(() => {
   $("#form").submit((e) => {
     e.preventDefault();
 
     const patternForEmail = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+
+    const data = {
+      name: $('[name = "name"]').val(),
+      email: $('[name = "email"]').val(),
+      title: $('[name = "title"]').val(),
+      comment: $('[name = "comment"]').val(),
+    };
+
+    const errors = {
+      nameError: "",
+      emailError: "",
+      titleError: "",
+      commentError: "",
+    };
+
+    const checkingWhereError = () => {
+      if (errors.nameError !== "") {
+        $(".main__contactUs--form--errorTextName").addClass("showErrorMessage");
+        $('[name = "name"]').addClass("inputError");
+      }
+
+      if (errors.emailError !== "") {
+        $(".main__contactUs--form--errorTextEmail").addClass("showErrorMessage");
+        $('[name = "email"]').addClass("inputError");
+      }
+
+      if (errors.titleError !== "") {
+        $(".main__contactUs--form--errorTextTitle").addClass("showErrorMessage");
+        $('[name = "title"]').addClass("inputError");
+      }
+
+      if (errors.commentError !== "") {
+        $(".main__contactUs--form--errorTextComment").addClass("showErrorMessage");
+        $('[name = "comment"]').addClass("inputError");
+      }
+      return;
+    };
 
     if ($(".form__buttonAndMessage--successMesage").hasClass("successMesageVisible")) {
       $(".form__buttonAndMessage--successMesage").removeClass("successMesageVisible");
@@ -12,35 +51,35 @@ $(document).ready(() => {
       $(".form__buttonAndMessage--faultMesage").removeClass("faultMesageVisible");
     }
 
-    if ($('[name = "name"]').val() === "") {
+    if (data.name === "") {
       $(".form__buttonAndMessage--faultMesage").addClass("faultMesageVisible");
 
-      return console.error("введите верное имя");
+      errors.nameError = "введите верное имя";
     }
 
-    if (!patternForEmail.test($('[name = "email"]').val())) {
+    if (!patternForEmail.test(data.email)) {
       $(".form__buttonAndMessage--faultMesage").addClass("faultMesageVisible");
 
-      return console.error("введите парвильную почту в формате");
+      errors.emailError = "введите парвильную почту в формате";
     }
 
-    if ($('[name = "title"]').val() === "") {
+    if (data.title === "") {
       $(".form__buttonAndMessage--faultMesage").addClass("faultMesageVisible");
 
-      return console.error("введите название заголовка");
+      errors.titleError = "введите название заголовка";
     }
-    if ($('[name = "comment"]').val() === "") {
+    if (data.comment === "") {
       $(".form__buttonAndMessage--faultMesage").addClass("faultMesageVisible");
 
-      return console.error("введите ваше сообщение");
+      errors.commentError = "введите ваше сообщение";
     }
 
-    const data = {
-      name: $('[name = "name"]').val(),
-      email: $('[name = "email"]').val(),
-      title: $('[name = "title"]').val(),
-      comment: $('[name = "comment"]').val(),
-    };
+    for (const key in errors) {
+      if (errors[key] !== "") {
+        checkingWhereError();
+        return;
+      }
+    }
 
     console.log(data);
 
@@ -49,5 +88,3 @@ $(document).ready(() => {
     $(".form__buttonAndMessage--successMesage").addClass("successMesageVisible");
   });
 });
-
-exports.formJquery = formJquery;

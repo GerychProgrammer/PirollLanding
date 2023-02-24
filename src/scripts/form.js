@@ -11,7 +11,50 @@ form.addEventListener("submit", (e) => {
   const successMesage = document.querySelector(".form__buttonAndMessage--successMesage");
   const faultMesage = document.querySelector(".form__buttonAndMessage--faultMesage");
 
+  const errorTextName = document.querySelector(".main__contactUs--form--errorTextName");
+  const errorTextEmail = document.querySelector(".main__contactUs--form--errorTextEmail");
+  const errorTextTitle = document.querySelector(".main__contactUs--form--errorTextTitle");
+  const errorTextComment = document.querySelector(".main__contactUs--form--errorTextComment");
+
   const patternForEmail = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+
+  const data = {
+    name: name.value,
+    email: email.value,
+    title: title.value,
+    comment: comment.value,
+  };
+
+  const errors = {
+    nameError: "",
+    emailError: "",
+    titleError: "",
+    commentError: "",
+  };
+
+  const checkingWhereError = () => {
+    if (errors.nameError !== "") {
+      errorTextName.classList.add("showErrorMessage");
+      name.classList.add("inputError");
+    }
+
+    if (errors.emailError !== "") {
+      errorTextEmail.classList.add("showErrorMessage");
+      email.classList.add("inputError");
+    }
+
+    if (errors.titleError !== "") {
+      errorTextTitle.classList.add("showErrorMessage");
+      title.classList.add("inputError");
+    }
+
+    if (errors.commentError !== "") {
+      errorTextComment.classList.add("showErrorMessage");
+      comment.classList.add("inputError");
+    }
+
+    return;
+  };
 
   if (successMesage.classList.contains("successMesageVisible")) {
     successMesage.classList.remove("successMesageVisible");
@@ -24,32 +67,34 @@ form.addEventListener("submit", (e) => {
   if (name.value === "") {
     faultMesage.classList.add("faultMesageVisible");
 
-    return console.error("введите верное имя");
+    errors.nameError = "введите верное имя";
   }
 
   if (!patternForEmail.test(email.value)) {
     faultMesage.classList.add("faultMesageVisible");
 
-    return console.error("введите парвильную почту в формате");
+    errors.emailError = "введите парвильную почту в формате";
   }
 
   if (title.value === "") {
     faultMesage.classList.add("faultMesageVisible");
 
-    return console.error("введите название заголовка");
+    errors.titleError = "введите название заголовка";
   }
   if (comment.value === "") {
     faultMesage.classList.add("faultMesageVisible");
 
-    return console.error("введите ваше сообщение");
+    errors.commentError = "введите ваше сообщение";
   }
 
-  const data = {
-    name: name.value,
-    email: email.value,
-    title: title.value,
-    comment: comment.value,
-  };
+  console.log(data);
+
+  for (const key in errors) {
+    if (errors[key] !== "") {
+      checkingWhereError();
+      return;
+    }
+  }
 
   name.value = "";
   email.value = "";
@@ -57,8 +102,6 @@ form.addEventListener("submit", (e) => {
   comment.value = "";
 
   successMesage.classList.add("successMesageVisible");
-
-  console.log(data);
 });
 
 exports.form = form;

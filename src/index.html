@@ -8,9 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -245,10 +242,25 @@
         if this could be the start of something beautiful.</p>
 
         <form name="contactUs" action="#" class="main__contactUs--form" id="form">
-          <input name="name"  type="text" placeholder="YOUR NAME" class="main__contactUs--input inputNameAndEmail">
-          <input name="email"  type="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
-          <input name="title"  type="text" placeholder="YOUR TITLE" class="main__contactUs--input inputTitle">
-          <textarea name="comment" cols="170" rows="670" placeholder="YOUR COMMENT" class="main__contactUs--textArea"></textarea>
+          <div class="main__contactUs--inputWrapper">
+            <input name="name"  type="text" placeholder="YOUR NAME" class="main__contactUs--input inputNameAndEmail">
+            <span class="main__contactUs--form--errorTextName">Введите имя</span>
+          </div>
+
+          <div class="main__contactUs--inputWrapper">
+            <input name="email"  type="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
+            <span class="main__contactUs--form--errorTextEmail">Введите почту</span>
+          </div>
+
+          <div class="main__contactUs--inputWrapper">
+            <input name="title"  type="text" placeholder="YOUR TITLE" class="main__contactUs--input inputTitle">
+            <span class="main__contactUs--form--errorTextTitle">Введите заголовок обращения</span>
+          </div>
+
+          <div class="main__contactUs--inputWrapper">
+            <textarea name="comment" cols="170" rows="670" placeholder="YOUR COMMENT" class="main__contactUs--textArea"></textarea>
+            <span class="main__contactUs--form--errorTextComment">Введите ваше сообщение</span>
+          </div>         
 
           <div class="form__buttonAndMessage">
             <button name="submit" type="submit" class="main__contactUs--submit">SEND MESSAGE</button>
