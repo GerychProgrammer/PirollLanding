@@ -11,106 +11,78 @@ form.addEventListener("submit", (e) => {
   const successMesage = document.querySelector(".form__buttonAndMessage--successMesage");
   const faultMesage = document.querySelector(".form__buttonAndMessage--faultMesage");
 
-  const errorTextName = document.querySelector(".main__contactUs--form--errorTextName");
-  const errorTextEmail = document.querySelector(".main__contactUs--form--errorTextEmail");
-  const errorTextTitle = document.querySelector(".main__contactUs--form--errorTextTitle");
-  const errorTextComment = document.querySelector(".main__contactUs--form--errorTextComment");
-
   const patternForEmail = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 
-  const data = {
-    name: name.value,
-    email: email.value,
-    title: title.value,
-    comment: comment.value,
-  };
-
-  const errors = {
-    nameError: "",
-    emailError: "",
-    titleError: "",
-    commentError: "",
-  };
-
-  const checkingWhereError = () => {
-    if (errors.nameError !== "") {
-      errorTextName.classList.add("showErrorMessage");
-      name.classList.add("inputError");
-    }
-
-    if (errors.emailError !== "") {
-      errorTextEmail.classList.add("showErrorMessage");
-      email.classList.add("inputError");
-    }
-    if (errors.titleError !== "") {
-      errorTextTitle.classList.add("showErrorMessage");
-      title.classList.add("inputError");
-    }
-
-    if (errors.commentError !== "") {
-      errorTextComment.classList.add("showErrorMessage");
-      comment.classList.add("inputError");
-    }
-
-    return;
-  };
-
-  if (successMesage.classList.contains("successMesageVisible")) {
-    successMesage.classList.remove("successMesageVisible");
+  const FORM_INPUT_CONFIG = {
+    name: {
+      className: "main__contactUs--form--name",
+    },
+    email: {
+      className: "main__contactUs--form--email",
+    },
+    title: {
+      className: "main__contactUs--form--title", 
+    },
+    comment: {
+      className: "main__contactUs--form--comment",
+    },
   }
 
-  if (faultMesage.classList.contains("faultMesageVisible")) {
-    faultMesage.classList.remove("faultMesageVisible");
+  
+  const getErrors = () => {
+    const errors = {};
+
+    if (name.value === "") {
+      errors.name = "введите верное имя";
+    }
+    if (!patternForEmail.test(email.value)) {
+      errors.email = "введите парвильную почту в формате";
+    }
+    if (title.value === "") {
+      errors.title = "введите название заголовка";
+    }
+    if (comment.value === "") {
+      errors.comment = "введите ваше сообщение";
+    }
+    
+    return errors
   }
 
-  if (name.value === "") {
+  const errors = getErrors()
+
+  if (!Object.keys(errors).length) {
+    name.value = "";
+    email.value = "";
+    title.value = "";
+    comment.value = "";
+
+    if (faultMesage.classList.contains("faultMesageVisible")) {
+      faultMesage.classList.remove("faultMesageVisible");
+    }
+
+    for (key in FORM_INPUT_CONFIG) {
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.remove("showErrorMessage");
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`).classList.remove("inputError");
+    }
+
+    successMesage.classList.add("successMesageVisible");
+    console.log('Success');
+  } else {
+    for (key in errors) {
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.add("showErrorMessage");
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`).classList.add("inputError");
+    }
+
+    if (successMesage.classList.contains("successMesageVisible")) {
+      successMesage.classList.remove("successMesageVisible");
+    }
+
+    if (faultMesage.classList.contains("faultMesageVisible")) {
+      faultMesage.classList.remove("faultMesageVisible");
+    }
+
     faultMesage.classList.add("faultMesageVisible");
-
-    errors.nameError = "введите верное имя";
-  }
-
-  if (!patternForEmail.test(email.value)) {
-    faultMesage.classList.add("faultMesageVisible");
-
-    errors.emailError = "введите парвильную почту в формате";
-  }
-
-  if (title.value === "") {
-    faultMesage.classList.add("faultMesageVisible");
-
-    errors.titleError = "введите название заголовка";
-  }
-  if (comment.value === "") {
-    faultMesage.classList.add("faultMesageVisible");
-
-    errors.commentError = "введите ваше сообщение";
-  }
-
-  console.log(data);
-
-  for (const key in errors) {
-    if (errors[key] !== "") {
-      checkingWhereError();
-      return;
-    } else {
-      errorTextName.classList.remove("showErrorMessage");
-      errorTextEmail.classList.remove("showErrorMessage");
-      errorTextTitle.classList.remove("showErrorMessage");
-      errorTextComment.classList.remove("showErrorMessage");
-
-      name.classList.remove("inputError");
-      email.classList.remove("inputError");
-      title.classList.remove("inputError");
-      comment.classList.remove("inputError");
-    }
-  }
-
-  name.value = "";
-  email.value = "";
-  title.value = "";
-  comment.value = "";
-
-  successMesage.classList.add("successMesageVisible");
+  }  
 });
 
 exports.form = form;
