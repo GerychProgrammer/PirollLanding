@@ -7,11 +7,14 @@
     }
 
     .header__banner {
-      width: 100vw;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 0 168px 0 0;
+      padding: 0 168px 140px 0;
+
+      .header__banner__wrapper {
+            padding-left: 700px;
+      }
     }
   } 
 

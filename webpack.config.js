@@ -30,12 +30,20 @@ module.exports = {
   optimization: optimization(),
   devtool: isDev ? "source-map" : false,
   devServer: {
-    port: 5500,
+    port: 3000,
     hot: isDev,
   },
   plugins: [
     new HTMLWebpackPlugin({
+      filename: "index.html",
       template: "./index.html",
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: "contact.html",
+      template: "./pages/contact.html",
       minify: {
         collapseWhitespace: isProd,
       },
