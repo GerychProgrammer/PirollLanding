@@ -42,7 +42,6 @@ form.addEventListener("submit", (e) => {
       errorTextEmail.classList.add("showErrorMessage");
       email.classList.add("inputError");
     }
-
     if (errors.titleError !== "") {
       errorTextTitle.classList.add("showErrorMessage");
       title.classList.add("inputError");
@@ -93,6 +92,16 @@ form.addEventListener("submit", (e) => {
     if (errors[key] !== "") {
       checkingWhereError();
       return;
+    } else {
+      errorTextName.classList.remove("showErrorMessage");
+      errorTextEmail.classList.remove("showErrorMessage");
+      errorTextTitle.classList.remove("showErrorMessage");
+      errorTextComment.classList.remove("showErrorMessage");
+
+      name.classList.remove("inputError");
+      email.classList.remove("inputError");
+      title.classList.remove("inputError");
+      comment.classList.remove("inputError");
     }
   }
 

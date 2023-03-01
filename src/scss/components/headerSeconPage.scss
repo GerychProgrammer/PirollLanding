@@ -1,0 +1,40 @@
+$primary-color:  #10c9c3;
+
+.headerContact {
+  background-color: #f5f5f5;
+  
+  .headerContact__navWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .headerContact__navigation {
+    width: 1171px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    .headerContact__navigation--img {
+      width: 31px;
+      height: 25px;
+    }
+
+    .headerContact__navigation--link{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      padding-left: 30px;
+      .headerContact:hover {
+        color: $primary-color;
+        transition: 0.35s;
+      }
+      .headerContact:visited {
+        color: black;
+      }
+    }    
+  }
+
+}
