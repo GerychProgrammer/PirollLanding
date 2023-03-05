@@ -1,5 +1,6 @@
 # Website layout training
 ### For the implementation I used
+- Handlebars
 - SCSS
 - JavaScript
 - jQuery
