@@ -17,12 +17,7 @@
     display: flex;
     width: 231px;
     margin-top: 102px;
-
-      .collum__image {
-        width: 40px;
-        height: 36px;
-        padding-top: 18px;
-      }
+    align-items: center;
 
       .column__text {
         display: flex;
@@ -42,7 +37,6 @@
 
       .collum__text {
         width: 170px;
-        height: 9px;
         color: white;
         font-size: 12px;
         font-weight: 500;

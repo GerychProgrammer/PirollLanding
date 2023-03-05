@@ -1,0 +1,228 @@
+<!DOCTYPE handlebars>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piroll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header__navWrapper">
+      <div class="header__navigation">
+        <img src="./img/logo.jpg" alt="#" class="header__navigation--img">
+        <nav class="header__navigation--navigateButtons">
+          {{#each navigateLinks}}
+          <a href="{{href}}" class="header__navigation--link">{{linkName}}</a>
+          {{/each}}
+        </nav>
+
+        <div class="header__menuButton">
+          <span class="header__menuButton--span"></span>
+        </div>
+      </div>
+
+      <div class="header__banner" id="home">
+        <div class="header__banner__wrapper">
+          <h1 class="header__bunner--heading">{{headerBanner.heading}}</h1>
+          <p class="header__banner--text">{{headerBanner.text}}</p>
+          <button class="header__banner--button">{{headerBanner.buttonText}}</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__about" id="about">
+      <h2 class="main__about--heading">{{mainAbout.heading}}</h2>
+      <p class="main__about--text">{{mainAbout.text}}</p>
+      <img src="./img/signature.png" alt="#" class="main__about--image">
+    </div>
+
+    <div class="main__skills">
+      <div class="main__skills__wrapper">
+        <div class="main__skills__progress">
+          <h2 class="main__skills--heading">{{mainSkills.heading}}</h2>
+    
+          <div class="main__skills__progress--progressBar">
+            {{!-- Можно ли это как-то сократить? --}}
+            
+            <label for="design">{{mainSkills.labelDesign}}</label>
+            <progress id="design" max="100" value="75"></progress>
+    
+            <label for="webDeveloper">{{mainSkills.labelWebDevelopment}}</label>
+            <progress id="webDeveloper" max="100" value="90"></progress>
+    
+            <label for="marketing">{{mainSkills.labelMarketing}}</label>
+            <progress id="marketing" max="100" value="65"></progress>
+          </div>
+        </div>
+    
+        <div class="main__skills__photo"></div>
+      </div>
+    </div>
+
+    <div class="main__numbers">
+      <div class="main__numbers__wrapper">
+        {{#each mainNumbers}}
+        <div class="main__numbers__collumn collum">
+          <img class="collum__image" src="{{imageSrc}}" alt="#">
+          <div class="column__text">
+            <span class="collum__number">{{number}}</span>
+            <span class="collum__text">{{text}}</span>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="main__works" id="work">
+      <div class="main__works__images">
+        <div class="main__works__images__firstWrapper">
+          {{#each mainWorks.firstWrapper}}
+          <div class="main__works__images__imgWithEye">
+            <img class="main__works__images--image" src="{{imageSrc}}" alt="#">
+            <a href="#" class="main__works__images--eye"><img src="{{hoverImageSrc}}" alt="#"></a>
+          </div>
+          {{/each}}
+        </div>
+    
+        <div class="main__works__images__secondWrapper">
+        {{#each mainWorks.firstWrapper}}
+          <div class="main__works__images__imgWithEye">
+            <img class="main__works__images--image" src="{{imageSrc}}" alt="#">
+            <a href="#" class="main__works__images--eye"><img src="{{hoverImageSrc}}" alt="#"></a>
+          </div>
+        {{/each}}
+        </div>
+      </div>
+    
+      <div class="main__works_learMoreButton ">
+        <span class="main__works_learMoreButton--text">{{mainWorks.text}}</span>
+      </div>
+    </div>
+
+    <div class="main__workProcess" id="process">
+      <h2 class="main__workProcess--heading">{{mainWorkProcess.heading}}</h2>
+      <p class="main__workProcess--text">{{mainWorkProcess.text}}</p>
+      <div class="main__workProcess--video">
+        <video class="main__workProcess--videoPlayer"></video>
+        <button class="main__workProcess--playButton"></button>
+      </div>
+    </div>
+
+    <div class="main__services" id="services">
+      <div class="main__services__wrapper">
+        {{#each mainServices.collumn}}
+        <div class="main__services__collumn collumn">
+          <img class="collum__image" src="{{imgSrc}}" alt="#">
+          <h3 class="collum__heading">{{heading}}</h3>
+          <span class="collum__text">{{text}}</span>
+        </div>
+        {{/each}}
+
+        {{#each mainServices.collumPaddingTop}}
+        <div class="main__services__collumn collumn collumPaddingTop">
+          <img class="collum__image" src="{{imgSrc}}" alt="#">
+          <h3 class="collum__heading">{{heading}}</h3>
+          <span class="collum__text">{{text}}</span>
+        </div>
+        {{/each}}
+      </div>  
+    </div>
+
+    <div class="main__recommendations" id="testimonials">
+      <div class="main__recommendations__wrapper">
+        <p class="main__recommendations--text">{{mainRecomendations.text}}</p>
+        <span class="main__recommendations--AuthorName">{{mainRecomendations.authorName}}</span>
+    
+        <div class="main__recommendations__imagesWrapper">
+          <img src="./img/1.png" alt="#" class="main__recommendations--slideCircles">
+          <img src="./img/2_active.png" alt="#" class="main__recommendations--slideCircles">
+          <img src="./img/3.png" alt="#" class="main__recommendations--slideCircles">
+        </div>
+      </div>
+    </div>
+
+    <div class="main__clients">
+      <div class="main__clients__wrapper">
+        {{#each mainClients}}
+        <img src="{{imgSrc}}" alt="#" class="main_clients--logo">
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="main__contactUs" id="contact">
+      <div class="main__contactUs__wrapper">
+        <h2 class="main__contactUs--heading">{{mainContactUs.heading}}</h2>
+        <p class="main__contactUs--text">{{mainContactUs.text}}</p>
+    
+        <form name="contactUs" action="#" class="main__contactUs--form" id="form">
+          <div class="main__contactUs--inputWrapper main__contactUs--form--name">
+            <input name="name" type="text" placeholder="YOUR NAME" class="main__contactUs--input inputNameAndEmail">
+            <span>{{mainContactUs.nameError}}</span>
+          </div>
+    
+          <div class="main__contactUs--inputWrapper main__contactUs--form--email">
+            <input name="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
+            <span>{{mainContactUs.emailError}}</span>
+          </div>
+    
+          <div class="main__contactUs--inputWrapper main__contactUs--form--title">
+            <input name="title" type="text" placeholder="YOUR TITLE" class="main__contactUs--input inputTitle">
+            <span>{{mainContactUs.titleError}}</span>
+          </div>
+    
+          <div class="main__contactUs--inputWrapper main__contactUs--form--comment">
+            <textarea name="comment" cols="170" rows="670" placeholder="YOUR COMMENT" class="main__contactUs--textArea"></textarea>
+            <span>{{mainContactUs.commentError}}</span>
+          </div>
+    
+          <div class="form__buttonAndMessage">
+            <button name="submit" type="submit" class="main__contactUs--submit">{{mainContactUs.buttonText}}</button>
+            <span class="form__buttonAndMessage--successMesage">{{mainContactUs.successMessage}}</span>
+            <span class="form__buttonAndMessage--faultMesage">{{mainContactUs.faultMessage}}</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__companyName">
+        <h3 class="footer__heading">{{footer.heading}}</h3>
+        <p class="footer__text">{{{footer.text}}}</p>
+      </div>
+  
+      <p class="footer__email">{{{footer.email}}}</p>
+  
+      <div class="footer__links">
+        <div class="footer__links__buttons">
+          <div class="footer__links__buttons__firstColumn">
+            {{#each footer.firstColumnLinks}}
+            <a href="" class="footer__link">{{linkText}}</a>
+            {{/each}}
+          </div>
+  
+          <div class="footer__links__buttons__secondColumn">
+            {{#each footer.secondColumnLinks}}
+            <a href="" class="footer__link">{{linkText}}</a>
+            {{/each}}
+          </div>
+        </div>
+  
+        <div class="footer__links__socialMedia">
+          {{#each footer.socialMediaLinks}}
+          <a href="" class="footer__link">{{linkText}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

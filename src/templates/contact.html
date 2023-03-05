@@ -14,9 +14,9 @@
   <header class="headerContact">
     <div class="headerContact__navWrapper">
       <div class="headerContact__navigation">
-        <img src="../img/logo.jpg" alt="#" class="headerContact__navigation--img">
+        <img src="./img/logo.jpg" alt="#" class="headerContact__navigation--img">
         <nav class="headerContact__navigation--navigateButtons">
-          <a href="../index.html" class="headerContact__navigation--link">HOME</a>
+          <a href="./index.html" class="headerContact__navigation--link">HOME</a>
           <a href="#about" class="headerContact__navigation--link">ABOUT</a>
           <a href="#work" class="headerContact__navigation--link">WORK</a>
           <a href="#process" class="headerContact__navigation--link">PROCESS</a>
@@ -25,8 +25,8 @@
           <a href="#contact" class="headerContact__navigation--link">CONTACT</a>
         </nav>
 
-        <div class="headerContact__menuButton">
-          <span class="headerContact__menuButton--span"></span>
+        <div class="header__menuButton">
+          <span class="header__menuButton--span"></span>
         </div>
       </div>
   </header>
@@ -38,24 +38,24 @@
         if this could be the start of something beautiful.</p>
 
         <form name="contactUs" action="#" class="main__contactUs--form" id="form">
-          <div class="main__contactUs--inputWrapper">
+          <div class="main__contactUs--inputWrapper main__contactUs--form--name">
             <input name="name"  type="text" placeholder="YOUR NAME" class="main__contactUs--input inputNameAndEmail">
-            <span class="main__contactUs--form--errorTextName">Введите имя</span>
+            <span>Введите имя</span>
           </div>
 
-          <div class="main__contactUs--inputWrapper">
-            <input name="email"  type="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
-            <span class="main__contactUs--form--errorTextEmail">Введите почту</span>
+          <div class="main__contactUs--inputWrapper main__contactUs--form--email">
+            <input name="email" placeholder="YOUR EMAIL" class="main__contactUs--input inputNameAndEmail EmailMargin">
+            <span>Введите почту</span>
           </div>
 
-          <div class="main__contactUs--inputWrapper">
+          <div class="main__contactUs--inputWrapper main__contactUs--form--title">
             <input name="title"  type="text" placeholder="YOUR TITLE" class="main__contactUs--input inputTitle">
-            <span class="main__contactUs--form--errorTextTitle">Введите заголовок обращения</span>
+            <span>Введите заголовок обращения</span>
           </div>
 
-          <div class="main__contactUs--inputWrapper">
+          <div class="main__contactUs--inputWrapper main__contactUs--form--comment">
             <textarea name="comment" cols="170" rows="670" placeholder="YOUR COMMENT" class="main__contactUs--textArea"></textarea>
-            <span class="main__contactUs--form--errorTextComment">Введите ваше сообщение</span>
+            <span>Введите ваше сообщение</span>
           </div>         
 
           <div class="form__buttonAndMessage">

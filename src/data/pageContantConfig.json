@@ -1,0 +1,247 @@
+{
+  "navigateLinks": [
+    {
+      "linkName": "HOME",
+      "href": "#home"
+    },
+    {
+      "linkName": "ABOUT",
+      "href": "#about"
+    },
+    {
+      "linkName": "WORK",
+      "href": "#work"
+    },
+    {
+      "linkName": "PROCESS",
+      "href": "#process"
+    },
+    {
+      "linkName": "SERVICES",
+      "href": "#services"
+    },
+    {
+      "linkName": "TESTIMONIALS",
+      "href": "#testimonials"
+    },
+    {
+      "linkName": "CONTACT",
+      "href": "contact.html"
+    }
+  ],
+
+  "headerBanner": {
+    "heading": "We Design and Develop",
+    "text": "We are a new design studio based in USA. We have over 20 years of combined experience, and know a thing or two about designing websites and mobile apps.",
+    "buttonText": "CONTACT US"
+  },
+
+  "mainAbout": {
+    "heading": "About Us",
+    "text": "Divide have don't man wherein air fourth. Own itself make have night won't make. A you under Seed appear which good give. Own give air without fowl moveth dry first heaven fruit, dominion she'd won't very all. "
+  },
+
+  "mainSkills": {
+    "heading": "Professional Skills",
+    "labelDesign": "UI/UX Design 75%",
+    "labelWebDevelopment": "Web Development 90%",
+    "labelMarketing": "Marketing 65%"
+  },
+
+  "mainNumbers": [
+    {
+      "imageSrc": "./img/portfolio.png",
+      "number": "1465",
+      "text": "PROJECTS COMPLITED"
+    },
+    {
+      "imageSrc": "./img/clock.png",
+      "number": "548",
+      "text": "WORKING HOURS"
+    },
+    {
+      "imageSrc": "./img/star.png",
+      "number": "612",
+      "text": "POSITIVE FEEDBACKS"
+    },
+    {
+      "imageSrc": "./img/heart.png",
+      "number": "735",
+      "text": "HAPPY CLIENTS"
+    }
+  ],
+
+  "mainWorks": {
+    "firstWrapper": [
+      {
+        "imageSrc": "./img/dark_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/light_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/dark_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/light_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      }
+    ],
+    "secondWrapper": [
+      {
+        "imageSrc": "./img/light_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/dark_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/light_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      },
+      {
+        "imageSrc": "./img/dark_grey.png",
+        "hoverImageSrc": "./img/eye.png"
+      }
+    ],
+    "text": "LOAD MORE WORK"
+  },
+
+  "mainWorkProcess": {
+    "heading": "Our Work Progress",
+    "text": "Was years it seasons was there form he in in them together over that, third sixth gathered female creeping bearing behold years."
+  },
+
+  "mainServices": {
+    "collumn": [
+      {
+        "imgSrc": "./img/diamond.png",
+        "heading": "UI / UX DESIGN",
+        "text": "Be set fourth land god darkness make it wherein own"
+      },
+      {
+        "imgSrc": "./img/bow.png",
+        "heading": "WEB DEVELOPMENT",
+        "text": "A she'd them bring void moving third she'd kind fill"
+      },
+      {
+        "imgSrc": "./img/phone.png",
+        "heading": "APP / MOBILE",
+        "text": "Dominion man second spirit he, earth they're creeping"
+      },
+      {
+        "imgSrc": "./img/gamepad.png",
+        "heading": "GAME DESIGN",
+        "text": "Morning his saying moveth it multiply appear life be"
+      }
+    ],
+    "collumPaddingTop": [
+      {
+        "imgSrc": "./img/plane.png",
+        "heading": "SEO / MARKETING",
+        "text": "Give won't after land fill creeping meat you, may"
+      },
+      {
+        "imgSrc": "./img/star2.png",
+        "heading": "PHOTOGRAPHY",
+        "text": "Creepeth one seas cattle grass give moving saw give"
+      },
+      {
+        "imgSrc": "./img/magicWand.png",
+        "heading": "GRAPHIC DESIGN",
+        "text": "Open, great whales air rule for, fourth life whales"
+      },
+      {
+        "imgSrc": "./img/paintBucket.png",
+        "heading": "ILLUSTRATIONS",
+        "text": "Whales likeness hath, man kind for them air two won't"
+      }
+    ]
+  },
+
+  "mainRecomendations": {
+    "text": "“Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.”",
+    "authorName": "Michael Hopkins"
+  },
+
+  "mainClients": [
+    {
+      "imgSrc": "./img/1_logo.png"
+    },
+    {
+      "imgSrc": "./img/2_logo.png"
+    },
+    {
+      "imgSrc": "./img/3_logo.png"
+    },
+    {
+      "imgSrc": "./img/4_logo.png"
+    },
+    {
+      "imgSrc": "./img/5_logo.png"
+    }
+  ],
+
+  "mainContactUs": {
+    "heading": "Need a Project?",
+    "text": "Let us know what you're looking for in an agency. We'll take a look and see if this could be the start of something beautiful.",
+    "nameError": "Введите имя",
+    "emailError": "Введите почту",
+    "titleError": "Введите заголовок обращения",
+    "commentError": "Введите ваше сообщение",
+    "buttonText": "SEND MESSAGE",
+    "successMessage": "Ваше сообщение успешно отправленно",
+    "faultMessage": "Введите коректные данные"
+  },
+  "footer": {
+    "heading": "Piroll Design, Inc.",
+    "text": "© 2017 Piroll. All rights reserved. <br>Designed by robirurk.",
+    "email": "hello@pirolltheme.com <br> +44 987 065 908",
+    "firstColumnLinks": [
+      {
+        "linkText": "Projects"
+      },
+      {
+        "linkText": "About"
+      },
+      {
+        "linkText": "Services"
+      },
+      {
+        "linkText": "Carrer"
+      }
+    ],
+    "secondColumnLinks": [
+      {
+        "linkText": "News"
+      },
+      {
+        "linkText": "Event"
+      },
+      {
+        "linkText": "Contact"
+      },
+      {
+        "linkText": "Legals"
+      }
+    ],
+    "socialMediaLinks": [
+      {
+        "linkText": "Facebook"
+      },
+      {
+        "linkText": "Twitter"
+      },
+      {
+        "linkText": "Instagramm"
+      },
+      {
+        "linkText": "Dribble"
+      }
+    ]
+  }
+}

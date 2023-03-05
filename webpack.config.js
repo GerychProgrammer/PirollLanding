@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -43,7 +44,7 @@ module.exports = {
     }),
     new HTMLWebpackPlugin({
       filename: "contact.html",
-      template: "./pages/contact.html",
+      template: "./templates/contact.html",
       minify: {
         collapseWhitespace: isProd,
       },
@@ -55,9 +56,18 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
+    new HandlebarsPlugin({
+      entry: path.join(__dirname, "src/templates", "*.hbs"),
+      output: path.join(__dirname, "src", "index.html"),
+      data: path.join(__dirname, "src/data/data.json"),
+    }),
   ],
   module: {
     rules: [
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"],
+      },
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
