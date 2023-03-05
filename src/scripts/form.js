@@ -21,14 +21,13 @@ form.addEventListener("submit", (e) => {
       className: "main__contactUs--form--email",
     },
     title: {
-      className: "main__contactUs--form--title", 
+      className: "main__contactUs--form--title",
     },
     comment: {
       className: "main__contactUs--form--comment",
     },
-  }
+  };
 
-  
   const getErrors = () => {
     const errors = {};
 
@@ -44,45 +43,82 @@ form.addEventListener("submit", (e) => {
     if (comment.value === "") {
       errors.comment = "введите ваше сообщение";
     }
-    
-    return errors
-  }
 
-  const errors = getErrors()
+    return errors;
+  };
 
-  if (!Object.keys(errors).length) {
-    name.value = "";
-    email.value = "";
-    title.value = "";
-    comment.value = "";
+  const errors = getErrors();
 
+  // if (!Object.keys(errors).length) {
+  //   name.value = "";
+  //   email.value = "";
+  //   title.value = "";
+  //   comment.value = "";
+
+  //   if (faultMesage.classList.contains("faultMesageVisible")) {
+  //     faultMesage.classList.remove("faultMesageVisible");
+  //   }
+
+  //   for (key in FORM_INPUT_CONFIG) {
+  //     console.log("in");
+  //     document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.remove("showErrorMessage");
+  //     document
+  //       .querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`)
+  //       .classList.remove("inputError");
+  //   }
+
+  //   successMesage.classList.add("successMesageVisible");
+  //   console.log("Success");
+  // } else {
+  //   for (key in errors) {
+  //     document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.add("showErrorMessage");
+  //     document
+  //       .querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`)
+  //       .classList.add("inputError");
+  //   }
+
+  //   if (successMesage.classList.contains("successMesageVisible")) {
+  //     successMesage.classList.remove("successMesageVisible");
+  //   }
+
+  //   if (faultMesage.classList.contains("faultMesageVisible")) {
+  //     faultMesage.classList.remove("faultMesageVisible");
+  //   }
+
+  //   faultMesage.classList.add("faultMesageVisible");
+  // }
+
+  if (Object.keys(errors).length) {
     if (faultMesage.classList.contains("faultMesageVisible")) {
       faultMesage.classList.remove("faultMesageVisible");
     }
 
     for (key in FORM_INPUT_CONFIG) {
+      console.log("in");
       document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.remove("showErrorMessage");
-      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`).classList.remove("inputError");
+      document
+        .querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`)
+        .classList.remove("inputError");
+    }
+
+    for (key in errors) {
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.add("showErrorMessage");
+      document
+        .querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`)
+        .classList.add("inputError");
+    }
+  } else {
+    for (key in FORM_INPUT_CONFIG) {
+      console.log("in");
+      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.remove("showErrorMessage");
+      document
+        .querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`)
+        .classList.remove("inputError");
     }
 
     successMesage.classList.add("successMesageVisible");
-    console.log('Success');
-  } else {
-    for (key in errors) {
-      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > span`).classList.add("showErrorMessage");
-      document.querySelector(`.${FORM_INPUT_CONFIG[key].className} > input, .${FORM_INPUT_CONFIG[key].className} > textarea`).classList.add("inputError");
-    }
-
-    if (successMesage.classList.contains("successMesageVisible")) {
-      successMesage.classList.remove("successMesageVisible");
-    }
-
-    if (faultMesage.classList.contains("faultMesageVisible")) {
-      faultMesage.classList.remove("faultMesageVisible");
-    }
-
-    faultMesage.classList.add("faultMesageVisible");
-  }  
+    console.log("Success");
+  }
 });
 
 exports.form = form;
